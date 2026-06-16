@@ -8,21 +8,24 @@
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --ink:#0C0E14;
-  --ink2:#2E3240;
-  --muted:#6B7080;
-  --line:#E4E6ED;
-  --surface:#F7F8FC;
-  --white:#FFFFFF;
+  --ink:#0C1A12;
+  --ink2:#2A3830;
+  --muted:#5E7268;
+  --line:#C8D9CC;
+  --surface:#D6E8D8;
+  --white:#EAF2E8;
   --emerald:#0A7A5A;
-  --emerald-light:#E3F4EF;
+  --emerald-light:#BFE0CA;
   --emerald-mid:#1B9E75;
-  --gold:#B8860B;
-  --gold-light:#FDF6E3;
-  --accent:#C0392B;
+  --gold:#7A6A20;
+  --gold-light:#EDE8C8;
+  --accent:#5C4B1E;
+  --page-bg:#EAF2E8;
+  --card-bg:#F2F8F1;
+  --nav-bg:rgba(234,242,232,0.93);
 }
 html{scroll-behavior:smooth}
-body{font-family:'DM Sans',sans-serif;background:var(--white);color:var(--ink);line-height:1.6;overflow-x:hidden}
+body{font-family:'DM Sans',sans-serif;background:var(--page-bg);color:var(--ink);line-height:1.6;overflow-x:hidden}
 
 /* ── CURSOR DOT ── */
 .cursor{position:fixed;width:8px;height:8px;background:var(--emerald-mid);border-radius:50%;pointer-events:none;z-index:9999;transition:transform 0.1s;mix-blend-mode:multiply}
@@ -32,7 +35,7 @@ nav{
   position:fixed;top:0;left:0;right:0;z-index:100;
   display:flex;justify-content:space-between;align-items:center;
   padding:1.1rem 5vw;
-  background:rgba(255,255,255,0.92);
+  background:var(--nav-bg);
   backdrop-filter:blur(20px);
   border-bottom:1px solid var(--line);
 }
@@ -71,6 +74,7 @@ nav{
   padding:8rem 5vw 4rem;
   gap:4rem;
   position:relative;
+  background:var(--page-bg);
 }
 .hero-left{}
 .hero-tag{
@@ -121,7 +125,7 @@ h1.hero-name em{color:var(--emerald-mid);font-style:normal}
 
 /* hero right — stats card */
 .hero-card{
-  background:var(--surface);
+  background:var(--card-bg);
   border:1px solid var(--line);
   border-radius:12px;
   padding:2.2rem;
@@ -138,7 +142,7 @@ h1.hero-name em{color:var(--emerald-mid);font-style:normal}
   color:var(--muted);margin-bottom:1.6rem;
 }
 .stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin-bottom:1.8rem}
-.stat-item{padding:1.1rem;background:var(--white);border:1px solid var(--line);border-radius:8px}
+.stat-item{padding:1.1rem;background:var(--page-bg);border:1px solid var(--line);border-radius:8px}
 .stat-val{
   font-family:'Playfair Display',serif;
   font-size:2rem;font-weight:700;color:var(--ink);line-height:1
@@ -162,7 +166,7 @@ h1.hero-name em{color:var(--emerald-mid);font-style:normal}
 
 /* ── SECTION TEMPLATE ── */
 .section{padding:5.5rem 5vw}
-.section-alt{background:var(--surface)}
+.section-alt{background:var(--card-bg)}
 .section-inner{max-width:1100px;margin:0 auto}
 .eyebrow{
   font-size:0.7rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;
@@ -178,7 +182,7 @@ h1.hero-name em{color:var(--emerald-mid);font-style:normal}
 /* ── EDUCATION ── */
 .edu-wrap{display:grid;gap:1.5rem}
 .edu-card{
-  background:var(--white);border:1px solid var(--line);
+  background:var(--card-bg);border:1px solid var(--line);
   border-radius:10px;padding:2rem 2.2rem;
   display:grid;grid-template-columns:1fr auto;gap:1rem;
   align-items:start;position:relative;overflow:hidden;
@@ -196,7 +200,7 @@ h1.hero-name em{color:var(--emerald-mid);font-style:normal}
 .edu-meta{font-size:0.78rem;color:var(--muted);margin-bottom:1rem}
 .edu-modules{display:flex;flex-wrap:wrap;gap:0.4rem;margin-top:0.8rem}
 .mod-chip{
-  background:var(--surface);border:1px solid var(--line);
+  background:var(--page-bg);border:1px solid var(--line);
   border-radius:3px;padding:0.22rem 0.62rem;
   font-size:0.7rem;color:var(--ink2);font-weight:500;
 }
@@ -222,7 +226,7 @@ h1.hero-name em{color:var(--emerald-mid);font-style:normal}
   border:1px solid var(--line);
   border-radius:3px;padding:0.4rem 0.9rem;
   font-size:0.82rem;font-weight:500;color:var(--ink2);
-  background:var(--white);transition:all 0.18s;cursor:default;
+  background:var(--page-bg);transition:all 0.18s;cursor:default;
 }
 .spill:hover{border-color:var(--emerald-mid);color:var(--emerald);background:var(--emerald-light)}
 .spill-dot{width:5px;height:5px;border-radius:50%;background:var(--emerald-mid);flex-shrink:0}
@@ -267,7 +271,7 @@ h1.hero-name em{color:var(--emerald-mid);font-style:normal}
 }
 .project-aside{}
 .aside-card{
-  background:var(--surface);border:1px solid var(--line);
+  background:var(--card-bg);border:1px solid var(--line);
   border-radius:10px;padding:1.8rem;
   position:sticky;top:6rem;
 }
@@ -296,7 +300,7 @@ h1.hero-name em{color:var(--emerald-mid);font-style:normal}
 .exp-node{
   position:absolute;left:-2rem;top:4px;
   width:13px;height:13px;border-radius:50%;
-  background:var(--white);border:2px solid var(--emerald-mid);
+  background:var(--page-bg);border:2px solid var(--emerald-mid);
   transform:translateX(calc(-50% + 0.5px));
 }
 .exp-period{
@@ -342,13 +346,13 @@ h1.hero-name em{color:var(--emerald-mid);font-style:normal}
   letter-spacing:0.02em;
 }
 .btn-white{
-  background:var(--white);color:var(--ink);
+  background:var(--page-bg);color:var(--ink);
   padding:0.9rem 2.2rem;border-radius:3px;
   font-size:0.9rem;font-weight:600;letter-spacing:0.04em;
   text-decoration:none;border:none;cursor:pointer;
   transition:background 0.2s,transform 0.15s;display:inline-block;
 }
-.btn-white:hover{background:#e8f5f0;transform:translateY(-1px)}
+.btn-white:hover{background:var(--card-bg);transform:translateY(-1px)}
 
 /* ── FOOTER ── */
 footer{
@@ -490,32 +494,32 @@ footer{
         </p>
       </div>
       <div class="reveal reveal-delay-1">
-        <table style="width:100%;border-collapse:collapse">
+        <table style="width:100%;border-collapse:collapse;background:var(--card-bg);border-radius:10px;overflow:hidden;border:1px solid var(--line);padding:0.5rem 1rem">
           <tbody>
             <tr style="border-bottom:1px solid var(--line)">
-              <td style="padding:0.9rem 0;font-size:0.82rem;color:var(--muted);font-weight:500;width:38%">Full Name</td>
-              <td style="padding:0.9rem 0;font-size:0.9rem;color:var(--ink);font-weight:500">Rahul Pun</td>
+              <td style="padding:0.9rem 1rem;font-size:0.82rem;color:var(--muted);font-weight:500;width:38%">Full Name</td>
+              <td style="padding:0.9rem 1rem;font-size:0.9rem;color:var(--ink);font-weight:500">Rahul Pun</td>
             </tr>
             <tr style="border-bottom:1px solid var(--line)">
-              <td style="padding:0.9rem 0;font-size:0.82rem;color:var(--muted);font-weight:500">Email</td>
-              <td style="padding:0.9rem 0;font-size:0.82rem;color:var(--ink);font-family:'DM Mono',monospace">frenchrepublic12345@gmail.com</td>
+              <td style="padding:0.9rem 1rem;font-size:0.82rem;color:var(--muted);font-weight:500">Email</td>
+              <td style="padding:0.9rem 1rem;font-size:0.82rem;color:var(--ink);font-family:'DM Mono',monospace">frenchrepublic12345@gmail.com</td>
             </tr>
             <tr style="border-bottom:1px solid var(--line)">
-              <td style="padding:0.9rem 0;font-size:0.82rem;color:var(--muted);font-weight:500">Location</td>
-              <td style="padding:0.9rem 0;font-size:0.9rem;color:var(--ink)">Kathmandu, Nepal</td>
+              <td style="padding:0.9rem 1rem;font-size:0.82rem;color:var(--muted);font-weight:500">Location</td>
+              <td style="padding:0.9rem 1rem;font-size:0.9rem;color:var(--ink)">Kathmandu, Nepal</td>
             </tr>
             <tr style="border-bottom:1px solid var(--line)">
-              <td style="padding:0.9rem 0;font-size:0.82rem;color:var(--muted);font-weight:500">Degree</td>
-              <td style="padding:0.9rem 0;font-size:0.9rem;color:var(--ink)">BSc (Hons) Computer Science</td>
+              <td style="padding:0.9rem 1rem;font-size:0.82rem;color:var(--muted);font-weight:500">Degree</td>
+              <td style="padding:0.9rem 1rem;font-size:0.9rem;color:var(--ink)">BSc (Hons) Computer Science</td>
             </tr>
             <tr style="border-bottom:1px solid var(--line)">
-              <td style="padding:0.9rem 0;font-size:0.82rem;color:var(--muted);font-weight:500">University</td>
-              <td style="padding:0.9rem 0;font-size:0.9rem;color:var(--ink)">University of Wolverhampton, UK</td>
+              <td style="padding:0.9rem 1rem;font-size:0.82rem;color:var(--muted);font-weight:500">University</td>
+              <td style="padding:0.9rem 1rem;font-size:0.9rem;color:var(--ink)">University of Wolverhampton, UK</td>
             </tr>
             <tr>
-              <td style="padding:0.9rem 0;font-size:0.82rem;color:var(--muted);font-weight:500">Availability</td>
-              <td style="padding:0.9rem 0">
-                <span style="background:#dcfce7;color:#166534;border-radius:100px;padding:0.22rem 0.75rem;font-size:0.72rem;font-weight:700;letter-spacing:0.04em">Immediately Available</span>
+              <td style="padding:0.9rem 1rem;font-size:0.82rem;color:var(--muted);font-weight:500">Availability</td>
+              <td style="padding:0.9rem 1rem">
+                <span style="background:var(--emerald-light);color:var(--emerald);border-radius:100px;padding:0.22rem 0.75rem;font-size:0.72rem;font-weight:700;letter-spacing:0.04em">Immediately Available</span>
               </td>
             </tr>
           </tbody>
